@@ -180,7 +180,7 @@ const EnhancedContactHeader = () => {
                 .map((char, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-gradient-to-r from-emerald-700 via-emerald-600 to-teal-600 bg-clip-text text-transparent group-hover:from-emerald-500 group-hover:via-emerald-400 group-hover:to-teal-400 transition-all duration-500 transform group-hover:scale-105"
+                    className="inline-block bg-gradient-to-r from-emerald-700 via-emerald-600 to-teal-600 bg-clip-text text-transparent group-hover:from-emerald-500 group-hover:via-emerald-400 group-hover:to-teal-400 transition-all duration-500 transform group-hover:scale-105 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
                     style={{
                       animationDelay: `${index * 50}ms`,
                       transitionDelay: `${index * 20}ms`,
@@ -197,7 +197,7 @@ const EnhancedContactHeader = () => {
                 .map((char, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-gradient-to-r from-teal-700 via-teal-600 to-emerald-600 bg-clip-text text-transparent group-hover:from-teal-500 group-hover:via-teal-400 group-hover:to-emerald-400 transition-all duration-500 transform group-hover:scale-105"
+                    className="inline-block bg-gradient-to-r from-teal-700 via-teal-600 to-emerald-600 bg-clip-text text-transparent group-hover:from-teal-500 group-hover:via-teal-400 group-hover:to-emerald-400 transition-all duration-500 transform group-hover:scale-105 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
                     style={{
                       animationDelay: `${(index + 35) * 50}ms`,
                       transitionDelay: `${index * 20}ms`,
