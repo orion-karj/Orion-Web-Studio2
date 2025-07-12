@@ -85,10 +85,10 @@ const MiddleSection = () => {
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <div className="relative group">
                 {/* Glow effect */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                <div className="absolute -inset-2.5 bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
                 {/* Animation container */}
-                <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-700/50 shadow-2xl">
+                <div className="relative bg-slate-800/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-700/50 shadow-2xl">
                   <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
                     <div className="aspect-square rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 ease-out">
                       {animationData ? (
