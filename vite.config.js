@@ -9,5 +9,4 @@ export default defineConfig({
       treeshake: false,
     },
   },
-  assetsInclude: ["**/*.png"],
 });
