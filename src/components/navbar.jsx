@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 w-18">
             <Link to="/" className="text-green-400 text-2xl font-bold">
-              <img src="/public/assets/panda-white.png" alt="logo" />
+              <img src="/assets/panda-white.png" alt="logo" />
             </Link>
           </div>
 
