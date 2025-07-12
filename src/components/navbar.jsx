@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoUrl from "/src/assets/panda-white.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +23,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 w-18">
             <Link to="/" className="text-green-400 text-2xl font-bold">
-              <img src="/src/assets/panda-white.png" alt="logo" />
+              <img src="/public/assets/panda-white.png" alt="logo" />
             </Link>
           </div>
 
