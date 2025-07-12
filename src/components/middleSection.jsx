@@ -19,7 +19,7 @@ const MiddleSection = () => {
   return (
     <>
       <section
-        className="relative xl:min-h-150 2xl:min-h-200 flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#176B34] to-slate-900 overflow-hidden"
+        className="relative xl:min-h-150 2xl:min-h-200 flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#176B34] to-slate-900 overflow-hidden py-10 xl:py-0"
         style={{ direction: "rtl" }}
       >
         {/* Animated background elements */}
