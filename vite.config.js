@@ -1,8 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      // Disable tree-shaking that might be causing the issue
+      treeshake: false,
+    },
+  },
+  // Alternative: try with different optimization settings
+  esbuild: {
+    // Disable some optimizations that might conflict
+    legalComments: "none",
+  },
 });
