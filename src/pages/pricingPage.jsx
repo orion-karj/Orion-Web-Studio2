@@ -157,7 +157,7 @@ const PricingPage = () => {
 
               {/* Instructions Paragraph */}
               <section
-                className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#176B34] to-slate-900 overflow-hidden rounded-xl"
+                className="relative xl:min-h-100 2xl:min-h-120 py-10 xl:py-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#176B34] to-slate-900 overflow-hidden rounded-xl"
                 style={{ direction: "rtl" }}
               >
                 {/* Animated background elements */}
@@ -170,7 +170,7 @@ const PricingPage = () => {
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                   <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
                     {/* Text Content */}
-                    <div className="order-2 lg:order-1 space-y-6">
+                    <div className="order-2 lg:order-1 space-y-6 text-center lg:text-right">
                       <h1
                         className="text-xl sm:text-2xl lg:text-3xl font-bold leading-snug"
                         style={{ unicodeBidi: "plaintext" }}
@@ -184,7 +184,7 @@ const PricingPage = () => {
                       </h1>
 
                       <p
-                        className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-lg"
+                        className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0"
                         style={{ unicodeBidi: "plaintext" }}
                       >
                         בחרו חבילת שירות והוסיפו תוספות, אם יש כאלה שרלוונטיות
@@ -195,21 +195,31 @@ const PricingPage = () => {
                     </div>
 
                     {/* Animation Container */}
-                    <div className="order-1 lg:order-2 flex justify-center lg:justify-end mr-6 lg:mr-40">
-                      <div className="relative group max-w-md w-full">
+                    <div
+                      className="order-1 lg:order-2 flex justify-center"
+                      style={{ direction: "ltr" }}
+                    >
+                      <div className="relative group max-w-md w-full flex justify-center">
                         {/* Glow effect */}
-                        <div className="w-80 h-80 absolute -inset-0.5 bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-700 group-hover:duration-300 animate-pulse"></div>
+                        <div className="w-64 h-64 sm:w-80 sm:h-80 absolute -inset-0.5 bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-700 group-hover:duration-300 animate-pulse"></div>
 
                         {/* Animation container */}
-                        <div className="w-80 h-80  relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-slate-700/40 shadow-xl">
-                          <div className="aspect-square rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-400 ease-out">
+                        <div className="w-64 h-64 sm:w-80 sm:h-80 relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-slate-700/40 shadow-xl">
+                          <div className="w-full h-full rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-400 ease-out flex items-center justify-center">
                             {animationData ? (
-                              <Lottie
-                                animationData={animationData}
-                                loop={true}
-                                autoplay={true}
-                                className="w-full h-full object-cover"
-                              />
+                              <div className="w-full h-full flex items-center justify-center">
+                                <Lottie
+                                  animationData={animationData}
+                                  loop={true}
+                                  autoplay={true}
+                                  className="w-full h-full"
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                  }}
+                                />
+                              </div>
                             ) : (
                               <p className="text-white text-center text-sm">
                                 Loading animation...
