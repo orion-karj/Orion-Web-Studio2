@@ -162,7 +162,7 @@ const PricingPage = () => {
               >
                 {/* Animated background elements */}
                 <div className="absolute inset-0 opacity-15">
-                  <div className="absolute top-1/4 left-1/4 w-52 h-52 bg-[#1BAF3A] rounded-full mix-blend-multiply filter blur-lg animate-pulse"></div>
+                  <div className="absolute top-/4 left-1/4 w-52 h-52 bg-[#1BAF3A] rounded-full mix-blend-multiply filter blur-lg animate-pulse"></div>
                   <div className="absolute top-3/4 right-1/4 w-52 h-52 bg-[#2EC84D] rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-2000"></div>
                   <div className="absolute bottom-1/4 left-1/2 w-52 h-52 bg-[#1BAF3A] rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-4000"></div>
                 </div>
@@ -201,7 +201,7 @@ const PricingPage = () => {
                     >
                       <div className="relative group max-w-md w-full flex justify-center">
                         {/* Glow effect */}
-                        <div className="w-64 h-64 sm:w-80 sm:h-80 absolute -inset-0.5 bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-700 group-hover:duration-300 animate-pulse"></div>
+                        <div className="w-64 h-64 sm:w-80 sm:h-80 absolute  bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-700 group-hover:duration-300 animate-pulse"></div>
 
                         {/* Animation container */}
                         <div className="w-64 h-64 sm:w-80 sm:h-80 relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-slate-700/40 shadow-xl">
