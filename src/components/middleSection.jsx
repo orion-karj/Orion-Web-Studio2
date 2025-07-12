@@ -7,7 +7,7 @@ const MiddleSection = () => {
 
   useEffect(() => {
     fetch(
-      "https://lottie.host/8b07f106-2295-478e-949e-cd86ff93d8e6/YwJe132N9D.json"
+      "https://lottie.host/a37ec06a-f08c-4217-a5f1-50254884d21b/ssIISECB6R.json"
     )
       .then((res) => res.json())
       .then(setAnimationData)
