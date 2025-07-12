@@ -12,7 +12,7 @@ export default function Footer() {
             dir="rtl"
           >
             <img
-              src="/src/assets/panda-white.png"
+              src="/assets/panda-white.png"
               alt="Orion Web Studio Logo"
               className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0"
             />
