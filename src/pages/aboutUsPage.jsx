@@ -97,12 +97,12 @@ const AboutUs = () => {
           <div className="absolute bottom-0 left-0 right-0 h-32 z-10" />
           <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 ">
             <div className="text-center">
-              <div className="inline-flex items-center px-3 py-2 sm:px-4 bg-green-100/80 text-green-800 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <div className="inline-flex items-center px-3 py-2 sm:px-4 bg-green-100/80 text-green-800 rounded-full text-md xl:text-sm font-medium mb-4 sm:mb-6">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
                 יוצרים מצוינות דיגיטלית
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 {" "}
                 <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   orion web studio
