@@ -148,7 +148,7 @@ const PricingPage = () => {
           <div className="absolute inset-0 "></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-sans font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-sans font-bold mb-6 bg-gradient-to-l from-emerald-100 via-green-400 to-emerald-500 bg-clip-text text-transparent">
                 בחר את החבילה המושלמת עבורך
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
