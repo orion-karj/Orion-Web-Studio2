@@ -187,7 +187,7 @@ const AboutUs = () => {
                 {ctaSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8">
-                <Link to="/contact">
+                <Link to="/services">
                   <button className="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto">
                     {ctaButtonText}
                   </button>
