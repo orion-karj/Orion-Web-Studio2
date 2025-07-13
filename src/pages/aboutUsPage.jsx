@@ -102,7 +102,7 @@ const AboutUs = () => {
                 יוצרים מצוינות דיגיטלית
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 {" "}
                 <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   orion web studio
