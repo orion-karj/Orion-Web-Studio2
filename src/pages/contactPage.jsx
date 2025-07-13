@@ -166,7 +166,7 @@ const EnhancedContactHeader = () => {
           </div>
 
           {/* Main text with enhanced styling */}
-          <h3 className="text-3xl font-bold mb-6 relative">
+          <h3 className="text-4xl xl:text-3xl font-bold mb-6 relative">
             {/* Animated underline */}
             <span
               className="absolute bottom-0 right-0 h-0.5 bg-gradient-to-l from-emerald-600 to-teal-600 transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
@@ -213,7 +213,6 @@ const EnhancedContactHeader = () => {
           <div className="flex justify-center mt-6">
             <div className="flex flex-col items-center space-y-2 group-hover:transform group-hover:translate-y-1 transition-transform duration-300">
               <ArrowDown className="w-6 h-6 text-emerald-600 group-hover:text-emerald-500 animate-bounce" />
-              <div className="w-1 h-8 bg-gradient-to-b from-emerald-600 to-transparent rounded-full group-hover:from-emerald-500 transition-colors duration-300" />
             </div>
           </div>
 
