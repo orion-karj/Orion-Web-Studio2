@@ -68,15 +68,21 @@ const MiddleSection = () => {
               <div className="grid sm:grid-cols-3 gap-4 pt-6">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <div className="w-2 h-2 bg-gradient-to-r from-[#1BAF3A] to-[#2EC84D] rounded-full"></div>
-                  <span className="text-slate-300 text-sm">תקשורת רציפה</span>
+                  <span className="text-slate-300 text-lg xl:text-sm">
+                    תקשורת רציפה
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <div className="w-2 h-2 bg-gradient-to-r from-[#2EC84D] to-[#176B34] rounded-full"></div>
-                  <span className="text-slate-300 text-sm">משוב מיידי</span>
+                  <span className="text-slate-300 text-lg xl:text-sm">
+                    משוב מיידי
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <div className="w-2 h-2 bg-gradient-to-r from-[#176B34] to-[#1BAF3A] rounded-full"></div>
-                  <span className="text-slate-300 text-sm">תוצאה מושלמת</span>
+                  <span className="text-slate-300 text-lg xl:text-sm">
+                    תוצאה מושלמת
+                  </span>
                 </div>
               </div>
             </div>
