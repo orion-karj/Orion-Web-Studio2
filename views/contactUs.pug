@@ -572,7 +572,7 @@ block content
         const formData = Object.fromEntries(new FormData(form));
 
         try {
-          const res = await fetch('http://localhost:5000/send', {
+          const res = await fetch('https://www.orion-webstudio.com/send', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
