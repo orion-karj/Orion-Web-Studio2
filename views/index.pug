@@ -1,0 +1,815 @@
+extends base.pug
+
+block content
+  style.
+    /* Reset and basics */
+    section.hero {
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      margin-bottom: 100px;
+    }
+
+    /* Radial background covering full screen */
+    section.hero .bg-radial {
+    position: fixed; /* fixed so it stays on viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.25;
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15), transparent 70%);
+    pointer-events: none;
+    transition: background 0.3s ease;
+    z-index: 0;
+    }
+
+    /* Grid line backgrounds covering full screen */
+    section.hero .grid-bg1,
+    section.hero .grid-bg2 {
+    position: fixed; /* fixed to viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background-repeat: repeat;
+    animation: gridPulse 10s ease-in-out infinite;
+    }
+
+    /* First grid layer: smaller grid, light green lines */
+    section.hero .grid-bg1 {
+    background-size: 50px 50px;
+    background-image:
+        linear-gradient(to right, rgba(16, 185, 129, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(16, 185, 129, 0.08) 1px, transparent 1px);
+    }
+
+    /* Second grid layer: larger grid, lighter green lines, reverse animation */
+    section.hero .grid-bg2 {
+    background-size: 50px 50px;
+    background-image:
+        linear-gradient(to right, rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+    animation-direction: reverse;
+    }
+
+    /* Grid pulse animation: subtle fade in/out */
+    @keyframes gridPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+    }
+
+
+    /* Floating elements container */
+    section.hero .floating-elements {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    }
+
+    /* Individual floating elements with pulse + float */
+    section.hero .floating-element {
+    position: absolute;
+    filter: blur(4px);
+    animation: floatPulse 6s ease-in-out infinite;
+    }
+
+    /* Floating pulse and float animation */
+    @keyframes floatPulse {
+    0%, 100% {
+        opacity: 0.2;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1.1);
+    }
+    }
+
+    /* Star floating element style */
+    section.hero .star {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.6), rgba(34, 197, 94, 0.6), rgba(6, 182, 212, 0.4));
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Circle floating element style */
+    section.hero .circle {
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.5), rgba(16, 185, 129, 0.5), rgba(6, 182, 212, 0.3));
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+    }
+
+
+    /* Container */
+    section.hero .container {
+      position: relative;
+      z-index: 10;
+      max-width: 90vw;
+      max-width: 1200px;
+      margin: 5rem auto 0;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    /* Enhanced heading with icon */
+    section.hero .heading-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    section.hero .icon-box {
+    width: 4.5rem;
+    height: 4.5rem;
+    background: linear-gradient(135deg, #10b981, #059669, #047857, #0d9488);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+        0 25px 50px rgba(4, 120, 87, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: rotate(3deg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    }
+
+
+    
+    section.hero .icon-box:hover {
+      transform: rotate(6deg) scale(1.05);
+      box-shadow: 
+        0 35px 70px rgba(4, 120, 87, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+    
+    section.hero .icon-box svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    section.hero .icon-glow {
+      position: absolute;
+      inset: -1rem;
+      border-radius: 2rem;
+      filter: blur(20px);
+      background: linear-gradient(135deg, rgba(16,185,129,0.3), rgba(34,197,94,0.3), rgba(6, 182, 212, 0.2));
+      animation: iconGlow 4s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes iconGlow {
+      0%, 100% { opacity: 0.5; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    section.hero h1 {
+      font: sans;
+      font-weight: 900;
+      font-size: 2.7rem;
+      background: linear-gradient(135deg, #34d399, #10b981, #059669, #0d9488);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      text-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+
+    /* Fixed subheading - this was the main issue */
+    section.hero h2 {
+      font-weight: 900;
+      font-size: 3.3rem;
+      font: sans;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #d9f99d, #86efac, #22c55e, #16a34a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+      transition: all 0.5s ease;
+      direction: rtl;
+      text-align: center;
+    }
+    
+    section.hero h2.glow {
+      filter: drop-shadow(0 0 20px rgba(16,185,129,0.8));
+      transform: scale(1.02);
+    }
+    
+    /* Fixed highlight spans - positioned behind text, not over it */
+    section.hero h2 .text-with-highlight {
+    background: linear-gradient(135deg, #d9f99d, #86efac, #22c55e, #16a34a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: inline-block;
+        position: relative;
+    }
+
+    
+    section.hero h2 .highlight {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      height: 120%;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(16, 185, 129, 0.3));
+      border-radius: 1rem;
+      filter: blur(8px);
+      animation: highlightPulse 3s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes highlightPulse {
+      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
+      50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* Enhanced paragraph */
+    section.hero p {
+      font-weight: 400;
+      font-size: 1.3rem;
+      max-width: 45rem;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      direction: rtl;
+      text-align: center;
+    }
+    
+    section.hero p strong {
+      background: linear-gradient(135deg, #86efac, #22c55e, #16a34a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+    
+    section.hero p strong::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 100%;
+      height: 0.3rem;
+      background: linear-gradient(90deg, #10b981, #22c55e, #16a34a);
+      border-radius: 9999px;
+      opacity: 0.7;
+      animation: underlinePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes underlinePulse {
+      0%, 100% { opacity: 0.4; transform: scaleX(0.8); }
+      50% { opacity: 1; transform: scaleX(1.1); }
+    }
+
+    /* Enhanced features */
+    section.hero .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.05rem;
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      direction: rtl;
+    }
+    
+    section.hero .feature-item {
+      position: relative;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      width: 180px;
+      height : 70px;
+      cursor: default;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(16, 185, 129, 0.1);
+      color: #86efac;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    section.hero .feature-item:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    
+    section.hero .feature-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: linear-gradient(135deg, #22c55e, #10b981, #0d9488);
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    section.hero .feature-item:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+    }
+
+        /* Container */
+    section.hero .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* slightly smaller gap */
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    direction: rtl;
+    }
+
+    /* Common button styles */
+    section.hero a.btn-primary,
+    section.hero a.btn-secondary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;       /* match Tailwind min-w */
+    padding: 1.25rem 2.5rem; /* px-10 = 2.5rem, py-5 = 1.25rem */
+    border-radius: 1.5rem;  /* rounded-3xl approx 24px */
+    font-weight: 400;
+    font-size: 1.125rem;    /* text-base ~18px */
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        color 0.5s ease,
+        background-color 0.5s ease,
+        border-color 0.5s ease;
+    z-index: 1;
+    gap: 0.75rem;           /* spacing between icon and text */
+    }
+
+    /* Primary button */
+    section.hero a.btn-primary {
+    background: linear-gradient(
+        to right,
+        #10b981,   /* from-emerald-500 */
+        #16a34a,   /* via-green-600 */
+        #047857    /* to-emerald-700 */
+    );
+    color: white;
+    box-shadow:
+        0 25px 50px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Hover effect primary */
+    section.hero a.btn-primary:hover,
+    section.hero a.btn-primary:focus {
+    transform: scale(1.1) rotate(-6deg);
+    box-shadow:
+        0 35px 75px rgba(16, 185, 129, 0.5);
+    outline: none;
+    }
+
+    /* Secondary button */
+    section.hero a.btn-secondary {
+    background: linear-gradient(to right, rgba(255,255,255,0.05), rgba(16,185,129,0.05));
+    backdrop-filter: blur(10px);
+    border: 3px solid #34d399; /* border-emerald-400 */
+    color: #86efac;            /* text-emerald-300 */
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Hover effect secondary */
+    section.hero a.btn-secondary:hover,
+    section.hero a.btn-secondary:focus {
+    color: white;
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.25));
+    border-color: #10b981; /* border-emerald-500 */
+    transform: scale(1.1) rotate(6deg);
+    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.4);
+    outline: none;
+    }
+
+    /* Icon inside buttons (span) */
+    section.hero a span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 10;
+    }
+
+    /* Animations for icons (simulate pulse and rotation) */
+    section.hero a.btn-primary span > .sparkle-icon {
+    animation: pulse 2s infinite ease-in-out;
+    }
+
+    section.hero a.btn-primary:hover span > .rocket-icon {
+    transform: translateX(0.25rem);
+    transition: transform 0.5s ease;
+    }
+
+    section.hero a.btn-secondary:hover span > .globe-icon {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+    }
+
+    /* Keyframes pulse */
+    @keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    }
+
+
+    /* Enhanced scroll indicator */
+    section.hero .scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: 2rem;
+      color: #22c55e;
+            font: sans;
+      font-weight: bold;
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      direction: rtl;
+      position: relative;
+      z-index: 10;
+      gap: 1rem;
+    }
+    
+    section.hero .scroll-indicator:hover {
+      color: #86efac;
+      transform: translateY(-5px);
+    }
+    
+    section.hero .scroll-indicator .mouse {
+      width: 35px;
+      height: 60px;
+      border: 3px solid #22c55e;
+      border-radius: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: linear-gradient(180deg, rgba(16,185,129,0.2), transparent);
+      backdrop-filter: blur(10px);
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+    }
+    
+    section.hero .scroll-indicator:hover .mouse {
+      border-color: #86efac;
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+    }
+    
+    section.hero .scroll-indicator .mouse-bounce {
+      width: 10px;
+      height: 18px;
+      margin-top: 15px;
+      background: linear-gradient(180deg, #86efac, #22c55e);
+      border-radius: 9999px;
+      animation: bounce 2s infinite ease;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(15px); opacity: 0.7; }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      section.hero h1 { font-size: 2.5rem; }
+      section.hero h2 { font-size: 3rem; }
+      section.hero p { font-size: 1.2rem; }
+      section.hero .features { gap: 1rem; }
+      section.hero .btn-group { gap: 1rem; }
+      section.hero a.btn-primary,
+      section.hero a.btn-secondary { min-width: 250px; padding: 1.2rem 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      section.hero .heading-wrapper { flex-direction: row; gap: 1rem; }
+      section.hero .icon-box { width: 6rem; height: 4rem; }
+      section.hero h1 { font-size: 2rem; }
+      section.hero h2 { font-size: 2.5rem; }
+      section.hero .features { flex-direction: column; align-items: center; }
+      section.hero .btn-group { flex-direction: column; align-items: center; }
+    }
+
+  script.
+    // Enhanced floating elements and mouse reactive gradients
+    (function(){
+      const floatingElementsContainer = document.querySelector('.floating-elements');
+      const bgRadial = document.querySelector('.bg-radial');
+      let floatingElements = [];
+      const count = 40;
+
+      // Generate enhanced floating elements
+      for(let i = 0; i < count; i++) {
+        const el = document.createElement('div');
+        el.classList.add('floating-element');
+        
+        if (Math.random() > 0.6) {
+          el.classList.add('star');
+          el.style.transform = `rotate(${Math.random() * 360}deg)`;
+        } else {
+          el.classList.add('circle');
+        }
+        
+        el.style.left = (Math.random() * 100) + '%';
+        el.style.top = (Math.random() * 100) + '%';
+        const size = (Math.random() * 8) + 3;
+        el.style.width = size + 'px';
+        el.style.height = size + 'px';
+        el.style.opacity = (Math.random() * 0.8 + 0.2).toFixed(2);
+        el.style.animationDelay = (Math.random() * 5).toFixed(2) + 's';
+        el.style.animationDuration = ((Math.random() * 6) + 4).toFixed(2) + 's';
+        
+        floatingElementsContainer.appendChild(el);
+        floatingElements.push(el);
+      }
+
+      // Enhanced mouse position tracking
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        requestAnimationFrame(updateBackground);
+      });
+
+      // Enhanced radial gradient background
+      function updateBackground() {
+        const gradients = [
+          `radial-gradient(800px circle at ${mouseX}px ${mouseY}px, rgba(16, 185, 129, 0.15), transparent 50%)`,
+          `radial-gradient(600px circle at ${mouseX + 200}px ${mouseY + 150}px, rgba(34, 197, 94, 0.1), transparent 50%)`,
+          `radial-gradient(400px circle at ${mouseX - 100}px ${mouseY - 100}px, rgba(6, 182, 212, 0.08), transparent 40%)`
+        ];
+        bgRadial.style.background = gradients.join(', ');
+      }
+
+      updateBackground();
+
+      // Enhanced text glow animation
+      const h2 = document.querySelector('section.hero h2');
+      let glow = false;
+      setInterval(() => {
+        glow = !glow;
+        if(glow) {
+          h2.classList.add('glow');
+        } else {
+          h2.classList.remove('glow');
+        }
+      }, 4000);
+
+      // Smooth scroll for scroll indicator
+      document.querySelector('.scroll-indicator').addEventListener('click', () => {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      });
+
+    })();
+
+    
+  section.hero
+    .bg-radial
+    .grid-bg1
+    .grid-bg2
+    .floating-elements
+    
+    .container
+      .heading-wrapper
+        .icon-box
+            svg(
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+            )
+                path(
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
+                )
+
+
+
+
+
+                      .icon-glow
+        h1 Orion Web Studio
+        .icon-box
+            svg(
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+            )
+                path(
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
+                )
+
+
+
+
+
+                      .icon-glow
+
+      h2
+        .text-with-highlight
+          | לעסקים שרוצים
+        br
+        .text-with-highlight
+          | לבלוט
+
+      p
+        strong אתרים מקצועיים, מודרניים ומהירים
+        br
+        | במחיר שמתאים לעסק שלך
+
+      .features
+        .feature-item
+            span טעינה מהירה
+            .feature-icon
+                svg(
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                )
+                    path(
+                        stroke="white"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z"
+                    )
+
+
+        .feature-item
+            span מעוצב אישית 
+            .feature-icon
+                svg(
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                )
+                    path(
+                        stroke="white"
+                        stroke-width="2"
+                        d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    )
+
+
+        .feature-item
+            span ביצועים מעולים
+            .feature-icon
+                svg(
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                )
+                    path(
+                        stroke="white"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+                    )
+
+
+
+        .feature-item
+            span נגישות גלובלית
+            .feature-icon
+                svg(
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                )
+                    path(
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.64 4.737A7.97 7.97 0 0 1 12 4a7.997 7.997 0 0 1 6.933 4.006h-.738c-.65 0-1.177.25-1.177.9 0 .33 0 2.04-2.026 2.008-1.972 0-1.972-1.732-1.972-2.008 0-1.429-.787-1.65-1.752-1.923-.374-.105-.774-.218-1.166-.411-1.004-.497-1.347-1.183-1.461-1.835ZM6 4a10.06 10.06 0 0 0-2.812 3.27A9.956 9.956 0 0 0 2 12c0 5.289 4.106 9.619 9.304 9.976l.054.004a10.12 10.12 0 0 0 1.155.007h.002a10.024 10.024 0 0 0 1.5-.19 9.925 9.925 0 0 0 2.259-.754 10.041 10.041 0 0 0 4.987-5.263A9.917 9.917 0 0 0 22 12a10.025 10.025 0 0 0-.315-2.5A10.001 10.001 0 0 0 12 2a9.964 9.964 0 0 0-6 2Zm13.372 11.113a2.575 2.575 0 0 0-.75-.112h-.217A3.405 3.405 0 0 0 15 18.405v1.014a8.027 8.027 0 0 0 4.372-4.307ZM12.114 20H12A8 8 0 0 1 5.1 7.95c.95.541 1.421 1.537 1.835 2.415.209.441.403.853.637 1.162.54.712 1.063 1.019 1.591 1.328.52.305 1.047.613 1.6 1.316 1.44 1.825 1.419 4.366 1.35 5.828Z"
+
+                    )
+
+            
+
+
+      .btn-group
+        a.btn-secondary(href="/services")
+            | צפה בחבילות ובמחירים
+            svg(
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+            )
+                    path(
+                        stroke="white"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"
+                    )
+
+
+        a.btn-primary(href="/contact")
+                svg.icon-sparkle(width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2")
+                        path(d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z" fill="currentColor" fill-opacity="0.3")
+                        path(d="M20 2v6" stroke-width="1.5")
+                        path(d="M17 5h6" stroke-width="1.5")
+                | רוצה אתר? בוא נדבר
+                svg(
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                )
+                    path(
+                        stroke="white"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z"
+                    )
+
+
+      .scroll-indicator
+        span גלה עוד
+        .mouse
+          .mouse-bounce
+
+block content2
+  include _middleSection

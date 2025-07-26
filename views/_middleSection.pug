@@ -1,0 +1,368 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js")
+    style.
+
+      section.middle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh;
+        min-width: 100%;
+        background: linear-gradient(to bottom right, #0f172a, #176B34, #0f172a);
+        overflow: hidden;
+        padding: 2rem 0;
+        direction: rtl;
+      }
+      .blobs div {
+        position: absolute;
+        border-radius: 9999px;
+        mix-blend-mode: multiply;
+        filter: blur(80px);
+        animation: pulse 6s infinite ease-in-out;
+      }
+      .blobs .blob1 {
+        top: 25%;
+        left: 25%;
+        width: 24rem;
+        height: 24rem;
+        background: #1BAF3A;
+      }
+      .blobs .blob2 {
+        top: 75%;
+        right: 25%;
+        width: 24rem;
+        height: 24rem;
+        background: #2EC84D;
+        animation-delay: 2s;
+      }
+      .blobs .blob3 {
+        bottom: 25%;
+        left: 50%;
+        width: 24rem;
+        height: 24rem;
+        background: #1BAF3A;
+        animation-delay: 4s;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.2; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(1.05); }
+      }
+      .container {
+        position: relative;
+        z-index: 10;
+        max-width: 1280px;
+        padding: 0 1rem;
+        margin: auto;
+
+      }
+      .grid {
+        display: grid;
+        width: 400px;
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+      }
+
+      @media (max-width: 767px) {
+        .grid {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+          width: 100%;
+        }
+
+        .text-content {
+          text-align: center;
+          padding: 0 1rem;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .highlight {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          text-align: center;
+        }
+
+        .feature {
+          justify-content: center;
+        }
+
+      .animation-box {
+        width: 400px;
+      }
+
+      .lottie-container {
+        width: 400px;
+      }
+
+      .glow {
+        width: 400px;
+      }
+
+      #lottie-player {
+        width: 400px
+      }
+      }
+
+
+
+      @media(min-width: 1024px) {
+        .grid {
+                  width: 1280px;
+          grid-template-columns: repeat(2, 1fr);
+                  gap: 2rem
+        }
+
+        section.middle {
+          min-height: 80vh;
+      }
+
+
+      .animation-box {
+        width: 500px;
+      }
+
+      .lottie-container {
+        width: 500px;
+      }
+
+      .glow {
+        width: 500px;
+      }
+
+      #lottie-player {
+        width: 500px
+      }
+
+      .text-content {
+        margin-top: 20px;
+      }
+
+      }
+
+      @media(min-width: 1440px) {
+        .grid {
+                  width: 1280px;
+          grid-template-columns: repeat(2, 1fr);
+                  gap: 9rem
+        }
+
+        section.middle {
+          min-height: 80vh;
+      }
+
+
+      .animation-box {
+        width: 600px;
+                height: 600px
+      }
+
+      .lottie-container {
+        width: 600px;
+                height: 600px
+      }
+
+      .glow {
+        width: 600px;
+                height: 600px
+      }
+
+      #lottie-player {
+        width: 600px;
+        height: 600px
+      }
+
+      section.middle .badge {
+        font-size: 1rem;
+      }
+
+      section.middle h1 {
+        font-size: 2.92rem;
+      }
+
+      section.middle .highlight {
+        font-size: 2.5rem;
+      }
+
+      section.middle p {
+        font-size: 1.25rem;
+      }
+      section.middle .feature {
+        font-size: 1.15rem;
+      }
+      }
+      .badge {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(to right, #1BAF3A, #176B34);
+        color: white;
+        font-weight: bold;
+        font-size: 0.875rem;
+        border-radius: 9999px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        display: inline-block;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        line-height: 1.4;
+      }
+      h1 .highlight {
+        background: linear-gradient(to right, #2EC84D, #1BAF3A, #177f3bff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      p {
+        color: #cbd5e1;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+                color : white;
+      }
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+      }
+      .dot1 { background: linear-gradient(to right, #1BAF3A, #2EC84D); }
+      .dot2 { background: linear-gradient(to right, #2EC84D, #176B34); }
+      .dot3 { background: linear-gradient(to right, #176B34, #1BAF3A); }
+
+      .lottie-container {
+        position: relative;
+        padding: 2rem;
+        background: rgba(30, 41, 59, 0.3);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(100, 116, 139, 0.3);
+        border-radius: 1rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        width: 400;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .glow {
+        position: absolute;
+        top: -10px; left: -10px; right: -10px; bottom: -10px;
+        background: linear-gradient(to right, #1BAF3A, #2EC84D);
+        border-radius: 1rem;
+        filter: blur(40px);
+        opacity: 0.3;
+        z-index: -1;
+        animation: pulse 3s infinite ease-in-out;
+        width: 400;
+      }
+
+      #lottie-player {
+        width: 400px;
+        height: 400px;
+      }
+
+      .particles div {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 9999px;
+        opacity: 0.6;
+        animation: ping 3s infinite ease-in-out;
+      }
+      .particles .p1 { top: 33%; left: 25%; background: white; animation-delay: 1s; }
+      .particles .p2 { top: 66%; right: 33%; background: #2EC84D; animation-delay: 3s; }
+      .particles .p3 { bottom: 33%; left: 66%; background: #1BAF3A; animation-delay: 5s; }
+      @keyframes ping {
+        0% { transform: scale(1); opacity: 0.6; }
+        75% { transform: scale(2); opacity: 0; }
+        100% { transform: scale(2); opacity: 0; }
+      }
+
+
+  body
+    section.middle
+      .blobs
+        div.blob1
+        div.blob2
+        div.blob3
+
+      .container
+        .grid
+          .text-content
+            .badge בנייה משותפת
+            h1
+              span.text-white אנחנו לא רק בונים אתר –
+              br
+              span.highlight אנחנו בונים אותו יחד איתכם
+            br
+            br
+            p
+              | לכל אורך הדרך אנחנו בקשר, בודקים, מתאימים ומשפרים עד שהכל מרגיש בדיוק כמו שצריך.
+              br
+              span(style="display:block;margin-top:1rem;font-weight:bold;color:white") אין הפתעות – רק שיתוף פעולה ודיוק עד לתוצאה המושלמת.
+            br
+            br
+            br
+
+            p 
+              | אז למה אתם מחכים? צרו איתנו קשר ותתחילו את המסע שלכם אל נוכחות דיגטלית מרשימה
+
+            .features
+              .feature
+                div.dot.dot1
+                span תקשורת רציפה
+              .feature
+                div.dot.dot2
+                span משוב מיידי
+              .feature
+                div.dot.dot3
+                span תוצאה מושלמת
+
+          .animation-box
+            .lottie-container
+              .glow
+              #lottie-player(style="width: 100%; aspect-ratio: 1/1;")
+
+      .particles
+        div.p1
+        div.p2
+        div.p3
+
+    script.
+      const container = document.getElementById("lottie-player");
+      fetch("https://lottie.host/a37ec06a-f08c-4217-a5f1-50254884d21b/ssIISECB6R.json")
+        .then(res => res.json())
+        .then(data => {
+          lottie.loadAnimation({
+            container: container,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch(err => console.error("Lottie load error:", err));

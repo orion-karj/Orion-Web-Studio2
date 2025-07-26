@@ -1,0 +1,269 @@
+//- footer.pug
+
+footer.footer
+  .container
+    // Main grid content
+    .footer-grid
+      // Logo & site name (RTL)
+      .footer-logo(dir="rtl")
+        .logo-text
+          h2.logo-title Orion Web Studio
+        img.logo-img(src="/assets/panda-white.png" alt="Orion Web Studio Logo")
+
+      // Quick nav (RTL)
+      .footer-nav(dir="rtl")
+        h3.nav-title ניווט מהיר
+        ul.nav-list(dir="rtl")
+          li
+            a.nav-link(href="/") דף הבית
+          li
+            a.nav-link(href="/about") עלינו
+          li
+            a.nav-link(href="/services") שירותים
+          li
+            a.nav-link(href="/contact") צור קשר
+
+      // Contact info (RTL)
+      .footer-contact(dir="rtl")
+        h3.contact-title צור קשר
+        .contact-info
+          p.contact-item מייל: orionkarj@gmail.com
+          p.contact-item וואטסאפ: 058-793-6933
+
+    // Bottom footer
+    .footer-bottom(dir="rtl")
+      p.copy-text Orion Web Studio © 2025 — כל הזכויות שמורות
+      button.back-to-top(type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})")
+        span.emoji 👆
+        span.text חזור למעלה
+
+style.
+  /* Footer base */
+  .footer {
+    background-color: transparent;
+    color: white;
+    padding-top: 1.5rem;    /* py-6 */
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;     /* px-4 */
+    padding-right: 1rem;
+    margin-top: 3rem;       /* mt-12 */
+  }
+  @media (min-width: 640px) { /* sm */
+    .footer {
+      padding-top: 2rem;    /* py-8 */
+      padding-bottom: 2rem;
+      padding-left: 1.5rem; /* px-6 */
+      padding-right: 1.5rem;
+      margin-top: 4rem;     /* mt-16 */
+    }
+  }
+  @media (min-width: 768px) { /* md */
+    .footer {
+      padding-top: 2.5rem;  /* py-10 */
+      padding-bottom: 2.5rem;
+      margin-top: 5rem;     /* mt-20 */
+    }
+  }
+
+  /* Container max width */
+  .container {
+    max-width: 72rem; /* max-w-6xl */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Grid layout */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* gap-6 */
+    font-size: 0.875rem; /* text-sm */
+    align-items: start;
+  }
+  @media (min-width: 640px) { /* sm */
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; /* gap-8 */
+    }
+  }
+  @media (min-width: 1024px) { /* lg */
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Logo section */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* space-x-4 */
+    flex-wrap: nowrap;
+  }
+  @media (min-width: 640px) {
+    .footer-logo {
+      justify-content: flex-start;
+    }
+  }
+  .logo-img {
+    width: 2.5rem;  /* w-10 */
+    height: 2.5rem; /* h-10 */
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  @media (min-width: 640px) {
+    .logo-img {
+      width: 3rem;  /* sm:w-12 */
+      height: 3rem; /* sm:h-12 */
+    }
+  }
+  .logo-text {
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .logo-text {
+      text-align: right;
+    }
+  }
+  .logo-title {
+    font-weight: 600;
+    font-size: 1rem; /* text-base */
+    background: linear-gradient(to right, #1BAF3A, #2EC84D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  @media (min-width: 640px) {
+    .logo-title {
+      font-size: 1.125rem; /* sm:text-lg */
+    }
+  }
+
+  /* Nav section */
+  .footer-nav, .footer-contact {
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .footer-nav, .footer-contact {
+      text-align: right;
+    }
+  }
+  .nav-title, .contact-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem; /* mb-3 */
+    color: #1BAF3A;
+    font-size: 1rem; /* text-base */
+  }
+  @media (min-width: 640px) {
+    .nav-title, .contact-title {
+      margin-bottom: 0.5rem; /* sm:mb-2 */
+      font-size: 0.875rem; /* sm:text-sm */
+    }
+  }
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #d1d5db; /* text-gray-300 */
+    line-height: 1.5;
+  }
+  .nav-list li {
+    margin-bottom: 0.5rem; /* space-y-2 */
+  }
+  @media (min-width: 640px) {
+    .nav-list li {
+      margin-bottom: 0.25rem; /* sm:space-y-1 */
+    }
+  }
+  .nav-link {
+    color: #d1d5db;
+    font-size: 0.875rem; /* text-sm */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  @media (min-width: 640px) {
+    .nav-link {
+      font-size: 0.75rem; /* sm:text-xs */
+    }
+  }
+  @media (min-width: 768px) {
+    .nav-link {
+      font-size: 0.875rem; /* md:text-sm */
+    }
+  }
+  .nav-link:hover {
+    color: #2EC84D;
+  }
+
+  /* Contact info */
+  .contact-info {
+    line-height: 1.5;
+    color: #d1d5db;
+  }
+  .contact-item {
+    margin-bottom: 0.5rem; /* space-y-2 */
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+    word-break: break-word;
+  }
+  @media (min-width: 640px) {
+    .contact-item {
+      margin-bottom: 0.25rem; /* sm:space-y-1 */
+      font-size: 0.75rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .contact-item {
+      font-size: 0.875rem;
+    }
+  }
+  .contact-item:hover {
+    color: #2EC84D;
+  }
+
+  /* Footer bottom */
+  .footer-bottom {
+    margin-top: 1.5rem; /* mt-6 */
+    border-top: 1px solid #374151; /* border-gray-700 */
+    padding-top: 1rem; /* pt-4 */
+    text-align: center;
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.75rem; /* text-xs */
+  }
+  @media (min-width: 640px) {
+    .footer-bottom {
+      margin-top: 2rem; /* sm:mt-8 */
+      font-size: 0.875rem; /* sm:text-sm */
+    }
+  }
+  @media (min-width: 768px) {
+    .footer-bottom {
+      margin-top: 2.5rem; /* md:mt-10 */
+    }
+  }
+
+  /* Back to top button */
+  .back-to-top {
+    margin-top: 0.5rem; /* mt-2 */
+    background: none;
+    border: none;
+    color: #2EC84D;
+    cursor: pointer;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.3s ease;
+    padding: 0;
+  }
+  @media (min-width: 640px) {
+    .back-to-top {
+      margin-top: 0.75rem; /* sm:mt-3 */
+      font-size: 0.875rem;
+    }
+  }
+  .back-to-top:hover {
+    color: #1BAF3A;
+    text-decoration: underline;
+  }
