@@ -4,20 +4,16 @@ block content
   style.
     /* Reset and basics */
     section.hero {
-     position: relative;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Horizontally centers items on the cross-axis (since flex-direction is column) */
-    justify-content: center; /* Vertically centers items on the main-axis (since flex-direction is column) */
-    color: #ffffff; /* Changed from transparent to visible white */
-    margin-bottom: 100px;
-
-    /* KEY FIX: Ensure the hero section has enough height to allow for vertical centering */
-    min-height: 100vh; /* Make it at least the full viewport height */
-    /* Alternatively, if you want a fixed height: */
-    /* height: 500px; */
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      margin-bottom: 100px;
+      min-height: 100vh; /* Ensure full viewport height */
     }
 
     /* Radial background covering full screen */
@@ -118,11 +114,16 @@ block content
     section.hero .container {
       position: relative;
       z-index: 10;
-      max-width: 90vw;
+      width: 100%;
       max-width: 1200px;
-      margin: 5rem auto 0;
+      margin: 0 auto; /* Remove top margin that was pushing it down */
+      margin-top: 5rem;
       padding: 0 2rem;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     /* Enhanced heading with icon */
