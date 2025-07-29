@@ -67,7 +67,7 @@ router.post("/send", async (req, res) => {
       email: sanitizeInput(email),
       phone: phone ? sanitizeInput(phone) : "",
       subject: sanitizeInput(subject),
-      message: message,
+      message: sanitizeInput(message),
     };
 
     await sendEmail({
