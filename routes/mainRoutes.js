@@ -67,7 +67,7 @@ router.post("/send", async (req, res) => {
       email: sanitizeInput(email),
       phone: phone ? sanitizeInput(phone) : "",
       subject: sanitizeInput(subject),
-      message: sanitizeInput(message),
+      message: message,
     };
 
     await sendEmail({
@@ -94,7 +94,7 @@ Submitted at: ${new Date().toLocaleString()}
         <p><strong>Phone:</strong> ${sanitizedData.phone || "Not provided"}</p>
         <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
         <h3>Message:</h3>
-        <p>${sanitizedData.message}</p>
+        <p>${sanitizedData.message.replace(/\n/g, "<br>")}</p>
         <hr>
         <p><small>Submitted at: ${new Date().toLocaleString()}</small></p>
       `,
