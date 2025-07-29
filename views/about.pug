@@ -1,3 +1,393 @@
 extends base
 
-block content
+block content2
+  style.
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background-color: #0a0a0a;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      direction: rtl;
+    }
+
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      direction: rtl;
+    }
+
+    .hero {
+      padding: 6rem 1.5rem 4rem;
+      direction: rtl;
+    }
+
+    .hero h1 {
+      font-size: 6rem;
+      background: linear-gradient(to right, #139c45, #20b455);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      direction: rtl;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      color: #22c55e;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      direction: rtl;
+      background: #0000003b;
+    }
+
+    .tagline svg {
+      width: 14px;
+      height: 14px;
+      fill: #22c55e;
+      margin: 0 0.4rem;
+    }
+
+    .values-grid, .choose-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media(min-width: 640px) {
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .choose-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(min-width: 1024px) {
+      .values-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media(max-width: 640px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero.section p {
+        font-size: 1.1rem;
+    }
+    }
+
+    .hero.section p {
+        font-size: 1.3rem;
+    }
+
+    /* Cards for core values */
+    .card {
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      transition: all 0.3s ease;
+      direction: rtl;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card:hover {
+      border-color: #22c55e;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      background: rgba(16,185,129,0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #22c55e;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .card-icon {
+      background: #22c55e;
+      color: white;
+    }
+
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.5;
+      stroke: #22c55e;
+      fill: none;
+    }
+
+    /* Redesigned Why Choose Us section */
+    .choose-item {
+      text-align: right;
+      padding: 1rem 1.5rem;
+      border-right: 4px solid #22c55e;
+      transition: transform 0.2s ease;
+    }
+
+    .choose-item:hover {
+      transform: translateX(-4px);
+    }
+
+    .choose-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #22c55e;
+    }
+
+    .choose-item p {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #22c55e;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 1rem 0;
+    }
+
+    .cta-btn:hover {
+      background: #16a34a;
+      transform: scale(1.05);
+    }
+
+    .cta-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .cta-links a {
+      color: #d1d5db;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .cta-links a:hover {
+      color: #fff;
+    }
+
+    .cta-links svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.5;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .small-print {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 1.5rem;
+    }
+
+  script.
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log("Page Loaded");
+    });
+
+  // HERO SECTION
+  .hero.section
+    .tagline
+      svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        polygon(points="12 2 15 8.5 22 9.3 17 14 18.5 21 12 17.8 5.5 21 7 14 2 9.3 9 8.5 12 2")
+      | יוצרים מצוינות דיגיטלית
+      svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        polygon(points="12 2 15 8.5 22 9.3 17 14 18.5 21 12 17.8 5.5 21 7 14 2 9.3 9 8.5 12 2")
+    h1 orion web studio
+    p(style="color:#d1d5db; max-width:700px; margin: 1rem auto;") מה מניע אותנו – ומה אנחנו עושים בשבילך
+
+  // CORE VALUES SECTION (transparent)
+  .section
+    h2(style="font-size:2rem;") הערכים שלנו
+    p(style="color:#d1d5db; margin-bottom:2rem;") הערכים האלה מנחים כל פרויקט שאנחנו לוקחים על עצמנו.
+
+    .values-grid
+      .card
+        .card-icon
+          svg(width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor")
+            path(d="M13.5 6L10 18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M6.5 8.5L3 12L6.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M17.5 8.5L21 12L17.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+        h3 איכות בביצוע
+        p(style="color:#d1d5db; font-size:0.9rem;") כל שורת קוד נכתבת במדויק ובכוונה, כדי שהאתר שלכם יעבוד חלק וללא תקלות.
+
+      .card
+        .card-icon
+          svg(width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor")
+            path(d="M13 10V3L5 14H11V21L19 10H13Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+        h3 אספקה מהירה
+        p(style="color:#d1d5db; font-size:0.9rem;") אנחנו יודעים שזמן זה כסף. התהליך שלנו מביא תוצאות מעולות בזמן הנכון.
+
+      .card
+        .card-icon
+            svg(
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="currentColor"
+                )
+                path(
+                    d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                )
+                path(
+                    d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                )
+                path(
+                    d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                )
+
+
+        h3 גישה ממוקדת לקוח
+        p(style="color:#d1d5db; font-size:0.9rem;") ההצלחה שלכם היא שלנו. מקשיבים ומפתחים פתרונות שמתאימים בדיוק לצרכים שלכם.
+
+      .card
+        .card-icon
+            svg(
+                width="24px"
+                height="24px"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="currentColor"
+                )
+                path(
+                    d="M6.74534 4H17.3132C17.3132 4 16.4326 17.2571 12.0293 17.2571C9.87826 17.2571 8.56786 14.0935 7.79011 10.8571C6.97574 7.46844 6.74534 4 6.74534 4Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                )
+                path(
+                    d="M17.3132 4C17.3132 4 18.2344 3.01733 19 2.99999C20.5 2.96603 20.7773 4 20.7773 4C21.0709 4.60953 21.3057 6.19429 19.8967 7.65715C18.4876 9.12 16.9103 10.4 16.2684 10.8571"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                )
+                path(
+                    d="M6.74527 4.00001C6.74527 4.00001 5.78547 3.00614 4.99995 3.00001C3.49995 2.9883 3.22264 4.00001 3.22264 4.00001C2.92908 4.60953 2.69424 6.19429 4.1033 7.65715C5.51235 9.12001 7.14823 10.4 7.79004 10.8572"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                )
+                path(
+                    d="M8.50662 20C8.50662 18.1714 12.0292 17.2571 12.0292 17.2571C12.0292 17.2571 15.5519 18.1714 15.5519 20H8.50662Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                )
+
+        h3 עיצוב שמניב תוצאות
+        p(style="color:#d1d5db; font-size:0.9rem;") אתרים יפים שמביאים תוצאות אמיתיות. משלבים מראה מקצועי עם חווית משתמש טובה.
+
+  // WHY CHOOSE US SECTION - Redesigned
+  .section
+    h2(style="font-size:2rem;") למה לבחור בorion web studio?
+    p(style="color:#a7f3d0; margin-bottom:2rem;") אנחנו לא רק בונים אתר - אנחנו בונים אותו איתכם
+
+    .choose-grid
+      .choose-item
+        h3 התאמה מושלמת לצרכים שלך
+        p כל אתר נבנה מאפס כדי להתאים בדיוק לסגנון, לקהל ולמטרות שלך.
+
+      .choose-item
+        h3 פתרון כולל
+        p עיצוב, פיתוח והתאמה אישית – הכל במקום אחד, לפי הצרכים שלך.
+
+      .choose-item
+        h3 טכנולוגיה מתקדמת
+        p משתמשים בכלים הכי עדכניים כדי להבטיח שהאתר שלכם יהיה מהיר, בטוח ומוכן לעתיד.
+
+      .choose-item
+        h3 תמיכה מלאה
+        p אנחנו איתכם לאורך כל הדרך, מוודאים שהאתר בדיוק כמו שדמיינתם אותו ומאפשרים לכם לבצע שינויים עוד לפני ההשקה.
+
+  // CTA SECTION
+  .section
+    h2(style="font-size:2rem;") מוכנים לשנות את הנוכחות הדיגיטלית שלכם?
+    p(style="color:#d1d5db; margin-bottom:2rem;") בואו ניצור משהו יוצא דופן יחד.
+    a.cta-btn(href="/services") לקיחת הצעת מחיר 👈
+
+    .cta-links
+      a(href="mailto:orionkarj@gmail.com")
+        svg(
+            width="24px"
+            height="24px"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            color="currentColor"
+            )
+            path(
+                d="M7 9L12 12.5L17 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            )
+            path(
+                d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+            )
+
+        | orionkarj@gmail.com
+      a(href="tel:0587936933")
+        svg(
+            width="24px"
+            height="24px"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            color="currentColor"
+            )
+            path(
+                d="M18.1182 14.702L14 15.5C11.2183 14.1038 9.5 12.5 8.5 10L9.26995 5.8699L7.81452 2L4.0636 2C2.93605 2 2.04814 2.93178 2.21654 4.04668C2.63695 6.83 3.87653 11.8765 7.5 15.5C11.3052 19.3052 16.7857 20.9564 19.802 21.6127C20.9668 21.8662 22 20.9575 22 19.7655L22 16.1812L18.1182 14.702Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            )
+
+        | 058-793-6933
+
+    p.small-print ייעוץ ללא התחייבות • מענה תוך 24 שעות
