@@ -617,3 +617,31 @@ block content
         }
       }, 80);
     });
+
+  script.
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse URL parameters
+      const params = new URLSearchParams(window.location.search);
+      const pkg = params.get('package');
+      const upsells = params.get('upsells');
+
+      // Find the message textarea
+      const messageBox = document.querySelector('textarea[name="message"]');
+
+      if (messageBox && pkg) {
+        // Format upsells if they exist and are not empty
+        let upsellText = '';
+        if (upsells && upsells.trim() !== '') {
+          upsellText = ` עם השידרוגים: ${upsells}`;
+        }
+
+        // Build final message in your template
+        const finalMessage = `שלום, אני מעוניינ/ת לרכוש את חבילת ${pkg}${upsellText}, ואשמח לקבל עוד פרטים.`;
+
+        // Prefill the textarea
+        messageBox.value = finalMessage;
+      }
+    });
+
+
+
