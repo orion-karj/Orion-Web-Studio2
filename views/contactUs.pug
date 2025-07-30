@@ -424,7 +424,7 @@ block content
 
 
     p.subtext
-        span#typewriter(style="color: #e2e6ecbe; font-weight: 400;") 
+        span#typewriter(style="color: #e2e6ecbe; font-weight: 400; direction: rtl;") 
         br
         span.highlight !אנחנו כאן כדי להפוך אותו למציאות
     .cta
@@ -615,7 +615,7 @@ block content
 
   script.
     document.addEventListener("DOMContentLoaded", () => {
-      const txt = "בין אם זו שאלה מעניינת, רעיון מבריק, או פרויקט חלומות";
+      const txt = "בין אם זו שאלה מעניינת, רעיון מבריק, או פרוייקט חלומות...";
       const typewriter = document.getElementById("typewriter");
       let i = 0;
       const interval = setInterval(() => {
