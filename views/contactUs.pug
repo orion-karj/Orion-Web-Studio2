@@ -215,6 +215,50 @@ block content
       background-image: linear-gradient(to left, #10b95cff, #0b9449ff, #056d34ff);
     }
 
+    .hero-title {
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-top: 5rem;
+    }
+
+    .hero-title span {
+      display: block;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+
+    .sparkle {
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      color: #facc15;
+      animation: pulse 2.5s infinite;
+    }
+
+    .sparkle-left {
+      top: -2.40rem;
+      left: -1rem;
+    }
+
+    .sparkle-right {
+      top: -2.40rem;
+      right: -1rem;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+      }
+    }
+
     @media (min-width: 1024px) {
         .contact-wrapper {
             justify-content: space-between;
@@ -244,50 +288,16 @@ block content
             font-size: 3.5rem;
             position: relative;
         }
-    }
 
-    .hero-title {
-      text-align: center;
-      font-weight: bold;
-      line-height: 1.2;
-      margin-top: 5rem;
-    }
+        .sparkle-left {
+          top: -0.75rem;
+          left: -1rem;
+        }
 
-    .hero-title span {
-      display: block;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-
-    .sparkle {
-      position: absolute;
-      width: 2rem;
-      height: 2rem;
-      color: #facc15;
-      animation: pulse 2.5s infinite;
-    }
-
-    .sparkle-left {
-      top: -0.75rem;
-      left: -1rem;
-    }
-
-    .sparkle-right {
-      top: -0.75rem;
-      right: -1rem;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.6;
-        transform: scale(1.2);
-      }
+        .sparkle-right {
+          top: -0.75rem;
+          right: -1rem;
+        }
     }
 
     .subtext {

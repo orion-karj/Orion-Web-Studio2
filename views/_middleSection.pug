@@ -5,6 +5,15 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js")
     style.
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
 
       section.middle {
         position: relative;
@@ -15,11 +24,12 @@ html(lang="en")
         width: 95%;
         background: linear-gradient(to bottom right, #0f172a, #176B34, #0f172a);
         overflow: hidden;
-        padding: 2rem 0;
+        padding: 2rem 1rem;
         direction: rtl;
         border-radius: 15px;
         margin: auto;
       }
+      
       .blobs div {
         position: absolute;
         border-radius: 9999px;
@@ -27,6 +37,7 @@ html(lang="en")
         filter: blur(80px);
         animation: pulse 6s infinite ease-in-out;
       }
+      
       .blobs .blob1 {
         top: 25%;
         left: 25%;
@@ -34,6 +45,7 @@ html(lang="en")
         height: 24rem;
         background: #1BAF3A;
       }
+      
       .blobs .blob2 {
         top: 75%;
         right: 25%;
@@ -42,6 +54,7 @@ html(lang="en")
         background: #2EC84D;
         animation-delay: 2s;
       }
+      
       .blobs .blob3 {
         bottom: 25%;
         left: 50%;
@@ -50,165 +63,36 @@ html(lang="en")
         background: #1BAF3A;
         animation-delay: 4s;
       }
+      
       @keyframes pulse {
         0%, 100% { opacity: 0.2; transform: scale(1); }
         50% { opacity: 0.4; transform: scale(1.05); }
       }
+      
       .container {
         position: relative;
         z-index: 10;
         max-width: 1280px;
+        width: 100%;
         padding: 0 1rem;
         margin: auto;
-
       }
+      
       .grid {
         display: grid;
-        width: 400px;
+        width: 100%;
         grid-template-columns: 1fr;
-        justify-content: space-around;
-      }
-
-      @media (max-width: 767px) {
-        .grid {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
-          width: 100%;
-        }
-
-        .text-content {
-          text-align: center;
-          padding: 0 1rem;
-        }
-
-        h1 {
-          font-size: 1.8rem;
-        }
-
-        .highlight {
-          font-size: 1.5rem;
-        }
-
-        p {
-          font-size: 1rem;
-        }
-
-        .features {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-          text-align: center;
-        }
-
-        .feature {
-          justify-content: center;
-        }
-
-      .animation-box {
-        width: 400px;
-      }
-
-      .lottie-container {
-        width: 400px;
-      }
-
-      .glow {
-        width: 400px;
-      }
-
-      #lottie-player {
-        width: 400px
-      }
-      }
-
-
-
-      @media(min-width: 1024px) {
-        .grid {
-                  width: 1280px;
-          grid-template-columns: repeat(2, 1fr);
-                  gap: 2rem
-        }
-
-        section.middle {
-          min-height: 80vh;
-      }
-
-
-      .animation-box {
-        width: 500px;
-      }
-
-      .lottie-container {
-        width: 500px;
-      }
-
-      .glow {
-        width: 500px;
-      }
-
-      #lottie-player {
-        width: 500px
+        gap: 2rem;
+        align-items: center;
       }
 
       .text-content {
-        margin-top: 20px;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
-      }
-
-      @media(min-width: 1440px) {
-        .grid {
-                  width: 1280px;
-          grid-template-columns: repeat(2, 1fr);
-                  gap: 9rem
-        }
-
-        section.middle {
-          min-height: 80vh;
-      }
-
-
-      .animation-box {
-        width: 600px;
-                height: 600px
-      }
-
-      .lottie-container {
-        width: 600px;
-                height: 600px
-      }
-
-      .glow {
-        width: 600px;
-                height: 600px
-      }
-
-      #lottie-player {
-        width: 600px;
-        height: 600px
-      }
-
-      section.middle .badge {
-        font-size: 1rem;
-      }
-
-      section.middle h1 {
-        font-size: 2.92rem;
-      }
-
-      section.middle .highlight {
-        font-size: 2.5rem;
-      }
-
-      section.middle p {
-        font-size: 1.25rem;
-      }
-      section.middle .feature {
-        font-size: 1.15rem;
-      }
-      }
       .badge {
         padding: 0.5rem 1rem;
         background: linear-gradient(to right, #1BAF3A, #176B34);
@@ -218,73 +102,99 @@ html(lang="en")
         border-radius: 9999px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         display: inline-block;
+        margin-bottom: 1rem;
       }
+      
       h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         color: white;
         line-height: 1.4;
+        margin: 0 0 1rem 0;
+        word-wrap: break-word;
       }
+      
       h1 .highlight {
         background: linear-gradient(to right, #2EC84D, #1BAF3A, #177f3bff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      
       p {
         color: #cbd5e1;
-        font-size: 1.125rem;
+        font-size: 1rem;
         line-height: 1.75rem;
+        margin: 1rem 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
+      
       .features {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: 1rem;
         margin-top: 2rem;
-                color : white;
+        color: white;
       }
+      
       .feature {
         display: flex;
         align-items: center;
         gap: 0.75rem;
+        font-size: 0.9rem;
       }
+      
       .dot {
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 9999px;
+        flex-shrink: 0;
       }
+      
       .dot1 { background: linear-gradient(to right, #1BAF3A, #2EC84D); }
       .dot2 { background: linear-gradient(to right, #2EC84D, #176B34); }
       .dot3 { background: linear-gradient(to right, #176B34, #1BAF3A); }
 
+      .animation-box {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
       .lottie-container {
         position: relative;
-        padding: 2rem;
+        padding: 1.5rem;
         background: rgba(30, 41, 59, 0.3);
         backdrop-filter: blur(8px);
         border: 1px solid rgba(100, 116, 139, 0.3);
         border-radius: 1rem;
         box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        width: 400;
+        width: 100%;
         margin: auto;
         display: flex;
         align-items: center;
         justify-content: center;
       }
+      
       .glow {
         position: absolute;
-        top: -10px; left: -10px; right: -10px; bottom: -10px;
+        top: -10px; 
+        left: -10px; 
+        right: -10px; 
+        bottom: -10px;
         background: linear-gradient(to right, #1BAF3A, #2EC84D);
         border-radius: 1rem;
         filter: blur(40px);
         opacity: 0.3;
         z-index: -1;
         animation: pulse 3s infinite ease-in-out;
-        width: 400;
       }
 
       #lottie-player {
-        width: 400px;
-        height: 400px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        max-width: 300px;
       }
 
       .particles div {
@@ -295,15 +205,131 @@ html(lang="en")
         opacity: 0.6;
         animation: ping 3s infinite ease-in-out;
       }
+      
       .particles .p1 { top: 33%; left: 25%; background: white; animation-delay: 1s; }
       .particles .p2 { top: 66%; right: 33%; background: #2EC84D; animation-delay: 3s; }
       .particles .p3 { bottom: 33%; left: 66%; background: #1BAF3A; animation-delay: 5s; }
+      
       @keyframes ping {
         0% { transform: scale(1); opacity: 0.6; }
         75% { transform: scale(2); opacity: 0; }
         100% { transform: scale(2); opacity: 0; }
       }
 
+      /* Tablet styles */
+      @media (min-width: 768px) {
+        section.middle {
+          padding: 3rem 2rem;
+        }
+
+        .grid {
+          gap: 3rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.125rem;
+        }
+
+        .features {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+
+        .feature {
+          justify-content: center;
+          font-size: 1rem;
+        }
+
+        .animation-box {
+          max-width: 400px;
+        }
+
+        #lottie-player {
+          max-width: 400px;
+        }
+      }
+
+      /* Desktop styles */
+      @media (min-width: 1024px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+        }
+
+        section.middle {
+          min-height: 80vh;
+          padding: 4rem 2rem;
+        }
+
+        .text-content {
+          margin-top: 0;
+        }
+
+        .animation-box {
+          max-width: 500px;
+        }
+
+        #lottie-player {
+          max-width: 500px;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .highlight {
+          font-size: 2.2rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+        }
+
+        .feature {
+          font-size: 1.1rem;
+          justify-content: flex-start;
+        }
+      }
+
+      /* Large desktop styles */
+      @media (min-width: 1440px) {
+        .grid {
+          gap: 6rem;
+        }
+
+        .animation-box {
+          max-width: 600px;
+        }
+
+        #lottie-player {
+          max-width: 600px;
+        }
+
+        .badge {
+          font-size: 1rem;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .highlight {
+          font-size: 2.7rem;
+        }
+
+        p {
+          font-size: 1.3rem;
+        }
+
+        .feature {
+          font-size: 1.2rem;
+        }
+      }
 
   body
     section.middle
@@ -320,16 +346,12 @@ html(lang="en")
               span.text-white אנחנו לא רק בונים אתר –
               br
               span.highlight אנחנו בונים אותו יחד איתכם
-            br
-            br
+            
             p
               | לכל אורך הדרך אנחנו בקשר, בודקים, מתאימים ומשפרים עד שהכל מרגיש בדיוק כמו שצריך.
               br
               span(style="display:block;margin-top:1rem;font-weight:bold;color:white") אין הפתעות – רק שיתוף פעולה ודיוק עד לתוצאה המושלמת.
-            br
-            br
-            br
-
+            
             p 
               | אז למה אתם מחכים? צרו איתנו קשר ותתחילו את המסע שלכם אל נוכחות דיגטלית מרשימה
 
@@ -347,7 +369,7 @@ html(lang="en")
           .animation-box
             .lottie-container
               .glow
-              #lottie-player(style="width: 100%; aspect-ratio: 1/1;")
+              #lottie-player
 
       .particles
         div.p1
