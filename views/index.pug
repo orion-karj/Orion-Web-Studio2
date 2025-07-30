@@ -174,18 +174,28 @@ block content
       50% { opacity: 1; transform: scale(1.2); }
     }
 
+    /* UPDATED H1 STYLES - Much bigger and better for mobile */
     section.hero h1 {
-      font: sans;
+      font-family: system-ui, -apple-system, sans-serif;
       font-weight: 900;
-      font-size: 2.7rem;
-      background: linear-gradient(135deg, #10b981, #059669, #047857, #0d9488);
-
+      font-size: 4.5rem; /* Increased from 2.7rem */
+      line-height: 1.1;
+      letter-spacing: -0.02em; /* Tighter letter spacing for large text */
+      background: linear-gradient(135deg, #34d399, #10b981, #059669, #0d9488);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       display: inline-block;
       text-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
       position: relative;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    /* Add a subtle hover effect for h1 */
+    section.hero h1:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.4));
     }
 
     /* Fixed subheading - this was the main issue */
@@ -517,24 +527,149 @@ block content
       50% { transform: translateY(15px); opacity: 0.7; }
     }
 
-    /* Responsive design */
+    /* IMPROVED RESPONSIVE DESIGN */
     @media (max-width: 768px) {
-      section.hero h1 { font-size: 2.5rem; }
-      section.hero h2 { font-size: 3rem; }
-      section.hero p { font-size: 1.2rem; }
-      section.hero .features { gap: 1rem; }
-      section.hero .btn-group { gap: 1rem; }
+      section.hero .container {
+        padding: 0 1.5rem;
+        margin-top: 3rem;
+      }
+      
+      section.hero .heading-wrapper {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      section.hero h1 { 
+        font-size: 3.5rem; /* Still quite large on tablets */
+        letter-spacing: -0.01em;
+      }
+      
+      section.hero h2 { 
+        font-size: 2.8rem; 
+      }
+      
+      section.hero p { 
+        font-size: 1.1rem; 
+        margin-bottom: 2.5rem;
+      }
+      
+      section.hero .features { 
+        gap: 1rem; 
+        max-width: 100%;
+      }
+      
+      section.hero .feature-item {
+        width: calc(50% - 0.5rem);
+        min-width: 160px;
+      }
+      
+      section.hero .btn-group { 
+        gap: 1rem; 
+        margin-bottom: 3rem;
+      }
+      
       section.hero a.btn-primary,
-      section.hero a.btn-secondary { min-width: 250px; padding: 1.2rem 2rem; }
+      section.hero a.btn-secondary { 
+        min-width: 250px; 
+        padding: 1.2rem 2rem; 
+      }
     }
 
+    /* ENHANCED MOBILE STYLES */
     @media (max-width: 480px) {
-      section.hero .heading-wrapper { flex-direction: row; gap: 1rem; }
-      section.hero .icon-box { width: 6rem; height: 4rem; display: none;}
-      section.hero h1 { font-size: 2rem; }
-      section.hero h2 { font-size: 2.5rem; }
-      section.hero .features { flex-direction: column; align-items: center; }
-      section.hero .btn-group { flex-direction: column; align-items: center; }
+      section.hero .container {
+        padding: 0 1rem;
+        margin-top: 2rem;
+      }
+      
+      section.hero .heading-wrapper { 
+        flex-direction: row; 
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      
+      section.hero .icon-box { 
+        display: none;
+      }
+      
+      section.hero .icon-box svg {
+        display: none;
+      }
+      
+      section.hero h1 { 
+        font-size: 2.8rem; /* Much bigger than before (was 2rem) */
+        letter-spacing: -0.01em;
+        line-height: 1.05;
+        margin-bottom: 0.75rem;
+      }
+      
+      section.hero h2 { 
+        font-size: 2.2rem; /* Bigger than before */
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+      }
+      
+      section.hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        max-width: 100%;
+      }
+      
+      section.hero .features { 
+        flex-direction: column; 
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      section.hero .feature-item {
+        width: 100%;
+        max-width: 280px;
+        height: 65px;
+      }
+      
+      section.hero .btn-group { 
+        flex-direction: column; 
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      
+      section.hero a.btn-primary,
+      section.hero a.btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        min-width: unset;
+        padding: 1.1rem 1.5rem;
+        font-size: 1rem;
+      }
+      
+      section.hero .scroll-indicator {
+        margin-bottom: 1rem;
+        transform: scale(0.9);
+      }
+    }
+
+    /* EXTRA SMALL SCREENS */
+    @media (max-width: 320px) {
+      section.hero h1 {
+        font-size: 2.4rem;
+      }
+      
+      section.hero h2 {
+        font-size: 1.9rem;
+      }
+      
+      section.hero .icon-box {
+        width: 3rem;
+        height: 3rem;
+      }
+      
+      section.hero .icon-box svg {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
     }
 
   script.
