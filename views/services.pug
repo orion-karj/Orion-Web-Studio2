@@ -139,88 +139,90 @@ block content2
     }
     }
 
-    /* Pricing grid */
-    /* Pricing grid - keep this as previously adjusted */
+    /* Pricing grid - Updated for 2 cards */
     .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px; /* Controls overall grid width on large screens */
-    margin: 8rem auto; /* Centers the entire grid horizontally */
-    text-align: center; /* Generally good for content inside */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Changed from 3 to 2 */
+      gap: 3rem; /* Increased gap for better spacing */
+      max-width: 800px; /* Reduced max-width for 2 cards */
+      margin: 8rem auto; /* Centers the entire grid horizontally */
+      text-align: center;
+      justify-items: center; /* Center the cards within their grid cells */
+    }
+
+    /* Large screens - keep 2 columns but with more space */
+    @media (min-width: 1200px) {
+      .pricing-grid {
+        max-width: 900px;
+        gap: 4rem;
+      }
     }
 
     .pricing-card {
-    background: rgba(0,0,0,0.55);
-    border: 1.5px solid #166534;
-    border-radius: 20px;
-    padding: 2rem 0.2rem 2.5rem 0.2rem;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    /* CHANGE START */
-    width: 100%; /* Allow card to take full width of its grid cell */
-    max-width: 375px; /* Set max-width to control its size on larger screens */
-    /* CHANGE END */
-    box-shadow: inset 0 0 10px rgba(0,255,100,0.1);
-    text-align: center;
-    align-items: center;
+      background: rgba(0,0,0,0.55);
+      border: 1.5px solid #166534;
+      border-radius: 20px;
+      padding: 2rem 0.2rem 2.5rem 0.2rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      width: 100%; /* Allow card to take full width of its grid cell */
+      max-width: 375px; /* Set max-width to control its size */
+      box-shadow: inset 0 0 10px rgba(0,255,100,0.1);
+      text-align: center;
+      align-items: center;
     }
 
-    
-
-    /* Add or update this media query */
-    @media (max-width: 950px) {
-    .pricing-grid {
-        grid-template-columns: 1fr; /* One column on smaller screens */
-        /* Ensure the grid itself is centered with auto margins */
-        max-width: 400px; /* Constrain the width of the single column grid for centering */
-    }
-    /* The pricing-card's width: 100% and max-width: 375px will handle its size within this grid */
-
-    .upsells {
+    /* Mobile responsiveness - stack cards vertically */
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        max-width: 400px;
+        gap: 2rem;
+      }
+      
+      .upsells {
         flex-direction: column;
         width: 95%;
-    }
-    .upsell-card {
+      }
+      .upsell-card {
         height: 200px;
         width: 300px;
-    }
-    .animation-section {
+      }
+      .animation-section {
         flex-direction: column;
-                width: 95%;
-    }
-    .animation-box {
+        width: 95%;
+      }
+      .animation-box {
         width: 90vw;
         max-width: 350px;
         height: auto;
-    }
-    .animation-text {
+      }
+      .animation-text {
         max-width: 90vw;
-    }
-    .summary-section {
+      }
+      .summary-section {
         width: 95vw;
-
-    }
-    .summary-details {
+      }
+      .summary-details {
         flex-direction: column;
         gap: 1rem;
-    }
-    .summary-item {
+      }
+      .summary-item {
         width: 100%;
         max-width: 300px;
-    }
+      }
     }
 
-    /* Add an additional media query for even smaller screens if needed,
-    especially if the 400px max-width for pricing-grid is still too wide. */
-    @media (max-width: 450px) { /* Adjust breakpoint as needed */
-        .pricing-grid {
-            max-width: 90vw; /* Allow the grid to be a percentage of viewport width */
-        }
+    /* Additional media query for very small screens */
+    @media (max-width: 450px) {
+      .pricing-grid {
+        max-width: 90vw;
+      }
     }
+
     .pricing-card:hover {
       transform: translateY(-8px);
       border-color: #22c55e;
@@ -512,74 +514,7 @@ block content2
       p בחרו חבילת שירות והוסיפו תוספות, אם יש כאלה שרלוונטיות עבורכם. בסיום, תועברו לטופס קצר לשליחת פרטים – בלי התחייבות ובלי תשלום. אנחנו כאן לכל שאלה, ונשמח לייעץ ולהתאים לכם את הפתרון הטוב ביותר
 
   .pricing-grid
-    .pricing-card.plan-card(data-plan="premium")
-      .card-header
-        .icon
-            svg(
-                width="30px"
-                height="30px"
-                stroke-width="1.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                color="#ffffffff"
-            )
-                path(
-                    d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22"
-                    stroke="#ffffffff"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                )
-                path(
-                    d="M13 2.04932C13 2.04932 16 5.99994 16 11.9999"
-                    stroke="#ffffffff"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                )
-                path(
-                    d="M11 21.9506C11 21.9506 8 17.9999 8 11.9999C8 5.99994 11 2.04932 11 2.04932"
-                    stroke="#ffffffff"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                )
-                path(
-                    d="M2.62964 15.5H12"
-                    stroke="#ffffffff"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                )
-                path(
-                    d="M2.62964 8.5H21.3704"
-                    stroke="#ffffffff"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                )
-                path(
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M21.8789 17.9174C22.3727 18.2211 22.3423 18.9604 21.8337 19.0181L19.2671 19.309L18.1159 21.6213C17.8878 22.0795 17.1827 21.8552 17.0661 21.2873L15.8108 15.1713C15.7123 14.6913 16.1437 14.3892 16.561 14.646L21.8789 17.9174Z"
-                    stroke="#ffffffff"
-                    stroke-width="1.5"
-                )
-
-        .header-text
-          h3 Premium
-          .price ₪1799
-      h2 פתרון מתקדם לעסקים שרוצים להתבלט ולהוביל
-      .card-features
-        p אתר מלא
-        p   API מותאם אישית כולל 
-        p קבלת תשלום באתר
-        p מאגר נתונים
-        p זמן פיתוח: 14-21 ימים
-      button.select-btn בחר חבילה זו
-
-    .pricing-card.plan-card.selected(data-plan="standard")
+    .pricing-card.plan-card(data-plan="standard")
       .card-header
         .icon
             svg(
@@ -599,7 +534,6 @@ block content2
                     stroke-linejoin="round"
                 )
 
-
         .header-text
           h3 Standard
           .price ₪999
@@ -611,7 +545,6 @@ block content2
         p עיצוב מתקדם
         p זמן פיתוח: 7-10 ימים
       button.select-btn בחר חבילה זו
-
 
     .pricing-card.plan-card(data-plan="starter")
       .card-header
@@ -747,14 +680,14 @@ block content2
           .selected-upsells#selected-upsells-list
         .summary-item
           p :החבילה הנבחרת
-          .value#selected-plan Standard
+          .value#selected-plan אנא בחר חבילה
 
       a.start-button#start-button(href="#") 💸 בואו נתחיל!
 
   script(src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js")
   script.
     // State management
-    let selectedPlan = 'Standard';
+    let selectedPlan = null;
     let selectedUpsells = [];
 
     // Initialize Lottie animation
@@ -806,7 +739,7 @@ block content2
     // Update summary function
     function updateSummary() {
       // Update selected plan display
-      document.getElementById('selected-plan').textContent = selectedPlan;
+      document.getElementById('selected-plan').textContent = selectedPlan || 'אנא בחר חבילה';
       
       // Update upsells display
       const upsellsSummary = document.getElementById('upsells-summary');
@@ -828,6 +761,12 @@ block content2
     // Update start button with parameters
     function updateStartButton() {
       const startButton = document.getElementById('start-button');
+      
+      if (!selectedPlan) {
+        startButton.href = '#'; // Disable link if no plan selected
+        return;
+      }
+      
       const upsellParams = selectedUpsells.join(',');
       const planParam = selectedPlan.toLowerCase();
       
